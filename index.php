@@ -23,29 +23,7 @@ $no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
     <link href="<?php echo $BaseDir;?>src/theme/css/main.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Go Mobi Search</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Brands</a></li>
-                <li><a href="#">All Mobiles</a></li>
-                <li><a href="#">Upcomming Mobiles</a></li>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+<?php include $BaseDir.'src/lib/header.php'; ?>
 <div class="jumbotron">
     <h1>Search Mobile</h1>
     <h3>Search For Any Mobile , Get review , get Specification All At One Place</h3><br>
