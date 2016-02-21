@@ -71,7 +71,7 @@ else {
 <?php include $BaseDir.'src/lib/header.php'; ?>
 <div class="jumbotron">
 
-    <form class='navbar-form' method="post" action="">
+    <form class='navbar-form' method="get" action="../Search/">
         <div class='form-group'>
             <input type='text' class='form-control searchtop' placeholder='Search Eg : Samsung Galaxy' name="search">
         </div>
