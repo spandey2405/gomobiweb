@@ -6,14 +6,13 @@
  * Time: 12:10 AM
  */
 
-$BaseDir = '';
+$BaseDir = '../';
 $staticContentUrlJson = 'http://static.gomobisearch.com/json/';
 $staticContentUrlIMG = 'http://static.gomobisearch.com/images/';
 include $BaseDir.'src/lib/curlurl.php';
-$url = "http://api.gomobisearch.com/gomobi/web/v1/mobiles/?page=1";
+$url = "http://api.gomobisearch.com/gomobi/web/v1/brands/";
 $response = CallAPI("GET", $url);
-$response_dic = json_decode($response, true)['payload']['data'];
-$no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
+$response_dic = json_decode($response, true)['payload'];
 ?>
 <html>
 <head>
@@ -37,6 +36,17 @@ $no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
             color:white;
             opacity: 1;
         }
+        .thumbnail1 {
+            box-shadow: 0 0 4px rgba(0,0,0,.14),0 2px 2px rgba(0,0,0,.28);
+            height: 140px;
+            padding:10px;
+            margin-bottom: 10px;
+        }
+        .thumbnail1:hover {
+            box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+            height: 140px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -55,20 +65,18 @@ $no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
     <?php
     $data = '';
     foreach ($response_dic as $key=>$mobile_info) {
-        $name = ucfirst($mobile_info['name']);
-        $image = $staticContentUrlIMG.$mobile_info['image'];
-        $des = $mobile_info['des'];
-        $link = str_replace('.json','/',$mobile_info['filejson']);
-        $des = substr($des, 0, 60);
+
+        $name = ucfirst($mobile_info['brand_name']);
+        $image = $staticContentUrlIMG.$mobile_info['brand_image'];
+        $link = str_replace('mobiles','', $mobile_info['brand_name']);
+
         $data = $data.'<div class="col-sm-5 col-md-3 box-mobile">';
-        $data = $data.'<div class="thumbnail">';
-        $data = $data."<center><h4>$name</h4></center>";
-        $data = $data."<img src='$image' style='height: 150px; margin-top: 10px; margin-bottom: 10px;'>";
-        $data = $data."<div class='caption'>";
-        $data = $data."<p>$des...</p>";
-        $data = $data."</div>";
-        $data = $data."<p><a href='view/$link' style='float:right;' class='btn btn-my-2'>Check It Out</a></p>";
-        $data = $data."</div></div>";
+        $data = $data.'<div class="thumbnail1">';
+        $data = $data."<center><h4>$name</h4>";
+        $data = $data."<img src='$image' style='margin-top: 10px; margin-bottom: 10px;'>";
+        $data = $data."<p><a href='../Search/?search=$link' class='btn btn-my-2'>View All Mobiles</a></p>";
+        $data = $data."</center></div></div>";
+
     }
     ?>
 
