@@ -28,11 +28,10 @@ $specification = json_decode($specification, true);
 ?>
 <html>
 <head>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,700|Material+Icons">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,700|Material+Icons">
     <script src="http://gomobisearch.com/src/theme/js/jquery-2.2.0.min.js"></script>
     <link href="http://gomobisearch.com/src/theme/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://gomobisearch.com/src/theme/css/main.css" rel="stylesheet">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style>
         .panel-body h4 {
             margin-bottom: 10px;
