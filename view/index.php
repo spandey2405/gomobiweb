@@ -89,7 +89,7 @@ $specification = json_decode($specification, true);
                                 $heading_content = $spec_cat;
                                 $heading = $current_heading;
                             }
-                            echo "<tr width='15%'><th>$heading_content</th><td width='30%'>$spec_data_title</td><td width='55%'>$spec_data_info</td></tr>";
+                            echo "<tr width='15%'><th>$heading_content</th><td width='15%'>$spec_data_title</td><td width='70%'>$spec_data_info</td></tr>";
                         }
                         echo '';
                         }
