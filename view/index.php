@@ -28,10 +28,11 @@ $specification = json_decode($specification, true);
 ?>
 <html>
 <head>
+    <title><?php ucfirst($name); ?></title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,700|Material+Icons">
-    <script src="../../src/theme/js/jquery-2.2.0.min.js"></script>
-    <link href="../../src/theme/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../src/theme/css/main.css" rel="stylesheet">
+    <script src="<?php echo $BaseURL; ?>src/theme/js/jquery-2.2.0.min.js"></script>
+    <link href="<?php echo $BaseURL; ?>src/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $BaseURL; ?>src/theme/css/main.css" rel="stylesheet">
     <style>
         .panel-body h4 {
             margin-bottom: 10px;
