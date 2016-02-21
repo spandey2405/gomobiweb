@@ -86,7 +86,7 @@ $specification = json_decode($specification, true);
                             }
                             else {
                                 $heading_content = $spec_cat;
-                                $current_heading = $heading;
+                                $heading = $current_heading;
                             }
                         foreach($spec_data as $spec_data_title=> $spec_data_info){
 
