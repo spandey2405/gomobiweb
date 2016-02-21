@@ -10,7 +10,7 @@ $BaseDir = '';
 $staticContentUrlJson = 'http://static.gomobisearch.com/json/';
 $staticContentUrlIMG = 'http://static.gomobisearch.com/images/';
 include $BaseDir.'src/lib/curlurl.php';
-$url = "http://api.gomobisearch.com/gomobi/web/v1/mobiles/?u=iphone&total=32";
+$url = "http://api.gomobisearch.com/gomobi/web/v1/mobiles/?page=1";
 $response = CallAPI("GET", $url);
 $response_dic = json_decode($response, true)['payload']['data'];
 $no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
