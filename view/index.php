@@ -73,19 +73,20 @@ $specification = json_decode($specification, true);
             <div class="panel panel-default">
                 <div class="panel-heading"><h3>Specification</h3></div>
                 <div class="panel-body">
+                    <table class='table table-striped'><tbody>
                     <?php
                     foreach($specification as $spec_cat=>$spec_data) {
                         if ($spec_cat == "Tests") {}
                         else {
-                        echo "<h4 class='panel-title'>$spec_cat</h4>";
-                        echo "<table class='table table-striped'><tbody>";
+                        echo "";
                         foreach($spec_data as $spec_data_title=> $spec_data_info){
                             echo "<tr><td width='30%'>$spec_data_title</td><td width='70%'>$spec_data_info</td></tr>";
                         }
-                        echo '</tbody></table>';
+                        echo '';
                         }
                     }
                     ?>
+                        </tbody></table>
                 </div>
 
             </div>
