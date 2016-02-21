@@ -3,17 +3,44 @@
  * Created by PhpStorm.
  * User: sp
  * Date: 20/02/16
- * Time: 12:10 AM
+ * Time: 4:05 AM
  */
-
-$BaseDir = '';
+$BaseDir = '../';
 $staticContentUrlJson = 'http://static.gomobisearch.com/json/';
 $staticContentUrlIMG = 'http://static.gomobisearch.com/images/';
 include $BaseDir.'src/lib/curlurl.php';
-$url = "http://api.gomobisearch.com/gomobi/web/v1/mobiles/?u=iphone&total=32";
-$response = CallAPI("GET", $url);
+include 'nav.php';
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+}
+else {
+    $page = 1;
+}
+if (strlen($_GET['search'])) {
+    $mobilename = $_GET['search'];
+    if ($mobilename == "all"){
+        $searchUrl = "http://api.gomobisearch.com/gomobi/web/v1/mobiles/?page=$page";
+    }
+    else {
+        $searchUrl = "http://api.gomobisearch.com/gomobi/web/v1/mobiles/?u=$mobilename&page=$page";
+    }
+
+}
+else {
+    header("location:../");
+}
+
+$response = CallAPI("GET", $searchUrl);
 $response_dic = json_decode($response, true)['payload']['data'];
-$no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
+$no_of_mobiles = json_decode($response, true)['payload']['total'];
+
+if($no_of_mobiles % 20 == 0) {
+    $nopages = $no_of_mobiles / 20;
+}
+else {
+    $nopages = (int)$no_of_mobiles / 20;
+    $nopages = $nopages + 1;
+}
 ?>
 <html>
 <head>
@@ -42,16 +69,19 @@ $no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
 <body>
 <?php include $BaseDir.'src/lib/header.php'; ?>
 <div class="jumbotron">
-    <h1>Search Mobile</h1>
-    <h3>Search For Any Mobile , Get review , get Specification All At One Place</h3><br>
-    <form class='navbar-form' method="get" action="Search/">
+
+    <form class='navbar-form' method="post" action="">
         <div class='form-group'>
             <input type='text' class='form-control searchtop' placeholder='Search Eg : Samsung Galaxy' name="search">
         </div>
         <button type='submit' class='btn btn-my'>Search Mobile</button>
     </form>
+
 </div>
+
 <div class="container">
+
+    <?php echo display_negivation($nopages, $page, $mobilename); ?>
     <?php
     $data = '';
     foreach ($response_dic as $key=>$mobile_info) {
@@ -67,12 +97,10 @@ $no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
         $data = $data."<div class='caption'>";
         $data = $data."<p>$des...</p>";
         $data = $data."</div>";
-        $data = $data."<p><a href='view/$link' style='float:right;' class='btn btn-my-2'>Check It Out</a></p>";
+        $data = $data."<p><a href='../view/$link' style='float:right;' class='btn btn-my-2'>Check It Out</a></p>";
         $data = $data."</div></div>";
     }
     ?>
 
     <?php echo $data; ?>
 </div>
-</body>
-</html>
