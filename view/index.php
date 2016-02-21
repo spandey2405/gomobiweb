@@ -81,6 +81,7 @@ $specification = json_decode($specification, true);
                         if ($spec_cat == "Tests") {}
                         else {
                             $heading = $spec_cat;
+                        foreach($spec_data as $spec_data_title=> $spec_data_info){
                             if ($heading == $current_heading) {
                                 $heading_content = "";
                             }
@@ -88,8 +89,6 @@ $specification = json_decode($specification, true);
                                 $heading_content = $spec_cat;
                                 $heading = $current_heading;
                             }
-                        foreach($spec_data as $spec_data_title=> $spec_data_info){
-
                             echo "<tr width='15%'><th>$heading_content</th><td width='30%'>$spec_data_title</td><td width='55%'>$spec_data_info</td></tr>";
                         }
                         echo '';
