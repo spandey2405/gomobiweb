@@ -75,12 +75,22 @@ $specification = json_decode($specification, true);
                 <div class="panel-body">
                     <table class='table table-striped'><tbody>
                     <?php
+                    $current_heading = "";
+                    $heading = "";
                     foreach($specification as $spec_cat=>$spec_data) {
                         if ($spec_cat == "Tests") {}
                         else {
-                        echo "";
+                            $heading = $spec_cat;
+                            if ($heading == $current_heading) {
+                                $heading_content = "";
+                            }
+                            else {
+                                $heading_content = $spec_cat;
+                                $current_heading = $heading;
+                            }
                         foreach($spec_data as $spec_data_title=> $spec_data_info){
-                            echo "<tr><td width='30%'>$spec_data_title</td><td width='70%'>$spec_data_info</td></tr>";
+
+                            echo "<tr width='15%'><th>$heading_content</th><td width='30%'>$spec_data_title</td><td width='55%'>$spec_data_info</td></tr>";
                         }
                         echo '';
                         }
