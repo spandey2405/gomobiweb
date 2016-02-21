@@ -61,8 +61,8 @@ $specification = json_decode($specification, true);
                         <?php echo $des; ?>
                     </div>
                     <div class="panel-footer">
-                        <a href="" class="btn btn-primary">Buy From Flipkart</a>
-                        <a href="" class="btn btn-success">Buy From Amazon</a>
+                        <a href="https://amazon.in" class="btn btn-primary">Buy From Flipkart</a>
+                        <a href="https://flipkart.com" class="btn btn-success">Buy From Amazon</a>
                     </div>
                 </div>
             </div>
