@@ -5,7 +5,7 @@
  * Date: 20/02/16
  * Time: 1:50 AM
  */
-$BaseURL = 'http://localhost/a/';
+$BaseURL = 'http://gomobisearch.com/';
 $BaseDir = '../';
 $staticContentUrlJson = 'http://static.gomobisearch.com/json/';
 $staticContentUrlIMG = 'http://static.gomobisearch.com/images/';
