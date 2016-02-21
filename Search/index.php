@@ -38,8 +38,9 @@ if($no_of_mobiles % 20 == 0) {
     $nopages = $no_of_mobiles / 20;
 }
 else {
-    $nopages = (int)$no_of_mobiles / 20;
+    $nopages = ($no_of_mobiles- ($no_of_mobiles % 20)) / 20;
     $nopages = $nopages + 1;
+
 }
 ?>
 <html>
