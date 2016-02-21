@@ -71,6 +71,7 @@ else {
             font-weight: 100;
             margin: 0px;
             opacity: 0.8;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -79,7 +80,7 @@ else {
 <div class="jumbotron">
 
     <form class='navbar-form' method="get" action="../Search/">
-        <h4>Search result for  <?php echo $mobilename; ?> , total <?php echo $no_of_mobiles; ?> mobiles found. </h4>
+        <h4>Search result for  <i><?php echo $mobilename; ?></i> , total <i><?php echo $no_of_mobiles; ?></i> mobiles found. </h4>
         <div class='form-group'>
             <input type='text' class='form-control searchtop' placeholder='Search Eg : Samsung Galaxy' name="search">
         </div>
