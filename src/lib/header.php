@@ -1,6 +1,7 @@
 <?php
 
 $homepage = "http://gomobisearch.com/";
+$brand = "http://gomobisearch.com/Brands/";
 $all = "http://gomobisearch.com/Search/?search=all";
 
 ?>
@@ -19,7 +20,7 @@ $all = "http://gomobisearch.com/Search/?search=all";
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-<!--                <li><a href="#">Brands</a></li>-->
+                <li><a href="<?php echo $brand; ?>">Brands</a></li>
                 <li>
                     <a href="<?php echo $all; ?>">All Mobiles</a>
                 </li>
