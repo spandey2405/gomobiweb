@@ -28,7 +28,7 @@ $specification = json_decode($specification, true);
 ?>
 <html>
 <head>
-    <title><?php ucfirst($name); ?> | GoMobiSearch</title>
+    <title><?php echo ucfirst($name); ?> | GoMobiSearch</title>
     <meta charset="UTF-8">
     <meta name="description" content="<?php echo $des; ?>"/>
     <meta name="keywords" content="Buy Mobiles, Samsung , Apple , Iphones , Sony Mobiles , Acer Mobiles , Compare Mobiles, <?php echo $name; ?>"/>
