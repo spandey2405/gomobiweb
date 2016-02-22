@@ -17,6 +17,11 @@ $no_of_mobiles = json_decode($response, true)['payload']['No Of Mobiles']
 ?>
 <html>
 <head>
+    <title>Go Mobi Search</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Search Mobile, search for any mobile, check latest mobile launch, get reviews , compare prices , get all specification at one place.. All at one place GomobiSearch"/>
+    <meta name="keywords" content="Buy Mobiles, Samsung , Apple , Iphones , Sony Mobiles , Acer Mobiles , Compare Mobiles"/>
+    <link rel="shortcut icon" href="images/yco5bRMcE.png" type="image/x-icon" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,700|Material+Icons">
     <script src="src/theme/js/jquery-2.2.0.min.js"></script>
     <link href="<?php echo $BaseDir;?>src/theme/css/bootstrap.min.css" rel="stylesheet">
