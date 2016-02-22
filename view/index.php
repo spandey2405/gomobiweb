@@ -33,7 +33,10 @@ $specification = json_decode($specification, true);
     <meta name="description" content="<?php echo $des; ?>"/>
     <meta name="keywords" content="Buy Mobiles, Samsung , Apple , Iphones , Sony Mobiles , Acer Mobiles , Compare Mobiles, <?php echo $name; ?>"/>
     <link rel="shortcut icon" href="<?php echo $image; ?>" type="image/x-icon" />
-
+    <meta property="og:title" content="<?php echo ucfirst($name); ?> | GoMobiSearch"/>
+    <meta property="og:image" content="<?php echo $image; ?>"/>
+    <meta property="og:site_name" content="GoMobiSearch"/>
+    <meta property="og:description" content="<?php echo $des; ?>"/>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,700|Material+Icons">
     <script src="<?php echo $BaseURL; ?>src/theme/js/jquery-2.2.0.min.js"></script>
     <link href="<?php echo $BaseURL; ?>src/theme/css/bootstrap.min.css" rel="stylesheet">
